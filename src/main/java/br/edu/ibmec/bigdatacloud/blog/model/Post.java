@@ -10,8 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import br.edu.ibmec.bigdatacloud.blog.model.Comment;
 
 @Data
 @Entity
@@ -22,9 +22,11 @@ public class Post {
     private int id;
     
     @Column
+    @NotBlank(message = "Campo titulo não pode ser vazio")
     private String title;
     
     @Column
+    @NotBlank(message = "Campo corpo do postagem não pode ser vazio")
     private String article;
     
     @Column
