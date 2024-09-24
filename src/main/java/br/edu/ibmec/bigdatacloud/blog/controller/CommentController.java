@@ -32,7 +32,7 @@ public class CommentController {
     private CommentRepository commentRepository;
 
     @GetMapping
-    public ResponseEntity<ArrayList<Comment>> getAll(@PathVariable("id") int idPost) {
+    public ResponseEntity<List<Comment>> getAll(@PathVariable("id") int idPost) {
         return this.postRepository.findById(idPost)
                                   .map(post -> new ResponseEntity<>(post.getComments(), HttpStatus.OK))
                                   .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));

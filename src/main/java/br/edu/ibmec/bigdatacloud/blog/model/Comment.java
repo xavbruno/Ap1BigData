@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
 
 @Data
@@ -15,6 +17,7 @@ import jakarta.persistence.Entity;
 public class Comment {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
     @Column

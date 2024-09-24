@@ -2,6 +2,8 @@ package br.edu.ibmec.bigdatacloud.blog.model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,5 +36,5 @@ public class Post {
     
     @OneToMany
     @JoinColumn(referencedColumnName = "id", name = "post_id")
-    private ArrayList<Comment> comments;
+    private List<Comment> comments;
 }
