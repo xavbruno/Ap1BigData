@@ -86,7 +86,7 @@ public class PostControllerTest {
                     .get("/post/1")
                     .contentType(MediaType.APPLICATION_JSON))
                     .andExpect(MockMvcResultMatchers.status().isOk())
-                    .andExpect(MockMvcResultMatchers.jsonPath("$.id", is(10)));
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.id", is(1)));
 
     }
 
