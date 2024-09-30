@@ -50,9 +50,9 @@ public class CommentController {
     public ResponseEntity<Comment> create(@PathVariable("id") int idPost, @Valid @RequestBody Comment comment) {
         Optional<Post> optPost = this.postRepository.findById(idPost);
 
-        if (optPost.isPresent() == false) 
+        if (optPost.isPresent() == false)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        
+
         Post post = optPost.get();
 
         //Adiciona o comentário para um determinado post
@@ -73,10 +73,10 @@ public class CommentController {
         Optional<Post> optPost = this.postRepository.findById(idPost);
         Optional<Comment> optComment = this.commentRepository.findById(idComment);
 
-        if (optPost.isPresent() == false) 
+        if (optPost.isPresent() == false)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        if (optComment.isPresent() == false) 
+        if (optComment.isPresent() == false)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
         //Exclui o comentário
@@ -85,5 +85,5 @@ public class CommentController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    
+
 }
